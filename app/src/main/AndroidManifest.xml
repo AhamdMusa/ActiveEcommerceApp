@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.activeitzone.activeecommercecms">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.TYPE_SYSTEM_ALERT" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <dist:module dist:instant="true" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Presentation.ui.activities.impl.WalletActivity"></activity>
+        <activity android:name=".Presentation.ui.activities.impl.ProductDescriptionActivity" />
+        <activity android:name=".Presentation.ui.activities.impl.ResetPasswordActivity" />
+        <activity android:name=".Presentation.ui.activities.impl.MyBidsActivity" />
+        <activity android:name=".Presentation.ui.activities.impl.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Presentation.ui.activities.impl.ProductReviewActivity" />
+        <activity android:name=".Presentation.ui.activities.impl.AccountInfoActivity" />
+        <activity android:name=".Presentation.ui.activities.impl.StripePaymentActivity" />
+        <activity android:name=".Presentation.ui.activities.impl.SellerShopActivity" />
+        <activity android:name=".Presentation.ui.activities.impl.PaymentActivity" />
+        <activity android:name=".Presentation.ui.activities.impl.RegisterActivity" />
+        <activity android:name=".Presentation.ui.activities.impl.ShippingActivity" />
+        <activity android:name=".Presentation.ui.activities.impl.PurchaseHistoryDetailsActivity" />
+        <activity android:name=".Presentation.ui.activities.impl.PurchaseHistoryActivity" />
+        <activity android:name=".Presentation.ui.activities.impl.WishlistActivity" />
+        <activity android:name=".Presentation.ui.activities.impl.BuyingOptionsActivity" />
+        <activity android:name=".Presentation.ui.activities.impl.PolicyViewActivity" />
+        <activity android:name=".Presentation.ui.activities.impl.ProductDetailsActivity" />
+        <activity android:name=".Presentation.ui.activities.impl.SubCategoryActivity" />
+        <activity android:name=".Presentation.ui.activities.impl.ProductListingActivity" />
+        <activity
+            android:name=".Presentation.ui.activities.impl.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity android:name=".Presentation.ui.activities.impl.LoginActivity" />
+        <activity
+            android:name="com.braintreepayments.api.BraintreeBrowserSwitchActivity"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="${applicationId}.braintree" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

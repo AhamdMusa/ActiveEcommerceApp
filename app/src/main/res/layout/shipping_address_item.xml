@@ -1,0 +1,67 @@
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="0dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/shipping_address_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="10dp"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:textSize="14dp"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:id="@+id/city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="City"
+                android:textSize="14dp"
+                android:layout_marginTop="5dp"/>
+            <TextView
+                android:id="@+id/postal_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Postal Code"
+                android:textSize="14dp"
+                android:layout_marginTop="5dp"/>
+            <TextView
+                android:id="@+id/country"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Country"
+                android:textSize="14dp"
+                android:layout_marginTop="5dp"/>
+            <TextView
+                android:id="@+id/phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone"
+                android:textSize="14dp"
+                android:layout_marginTop="5dp"/>
+
+        </LinearLayout>
+
+        <Toolbar
+            android:id="@+id/shipping_card_toolbar"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

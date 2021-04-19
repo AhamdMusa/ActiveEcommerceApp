@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EVL568415115"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:text="$ 3000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_below="@+id/code"/>
+
+        <TextView
+            android:id="@+id/cancelled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancelled"
+            android:textColor="#fff"
+            android:background="@color/bt_error_red"
+            android:padding="5dp"
+            android:layout_toLeftOf="@id/unpaid" />
+
+        <TextView
+            android:id="@+id/unpaid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Unpaid"
+            android:textColor="#fff"
+            android:background="@color/carbon_orange_400"
+            android:padding="5dp"
+            android:layout_alignParentRight="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30 Jul, 11:29 PM"
+            android:layout_below="@id/unpaid"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

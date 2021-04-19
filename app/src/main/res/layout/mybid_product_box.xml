@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="1dp"
+    app:cardElevation="0dp"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/bid_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_name"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="Your bid was"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@android:color/darker_gray"/>
+
+        <TextView
+            android:id="@+id/bid_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/bid_text"
+            android:layout_alignBottom="@id/bid_text"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/colorPrimary"
+            android:text="$0.00"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/bid_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/bid_amount"
+            android:layout_alignBottom="@id/bid_amount"
+            android:layout_marginLeft="5dp"
+            android:text="0 days ago"
+            android:textColor="@android:color/darker_gray"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <TextView
+            android:id="@+id/place_bid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_alignBottom="@id/highest_bid"
+            android:text="PLACE BID"
+            android:textSize="16sp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/highest_bid"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/bid_text"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="$0.00"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

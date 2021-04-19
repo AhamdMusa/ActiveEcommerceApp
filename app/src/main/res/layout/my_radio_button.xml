@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.activeitzone.activeecommercecms.Presentation.ui.customui.MyRadioButton xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MyCustomRadioButton"
+    android:minHeight="40dp"/>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="150dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/product_image"
+            android:layout_width="150dp"
+            android:layout_height="130dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/home_background" />
+
+        <TextView
+            android:id="@+id/product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/product_image"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/total_bids"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_name"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/product_image"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <TextView
+            android:id="@+id/current_bid_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/total_bids"
+            android:layout_toRightOf="@id/product_image"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="TextView"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:text="Your bidding amount must be greater than the current bid"
+        android:textSize="15sp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/bid_amount"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="50dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Enter your bid amount"
+            android:inputType="numberDecimal"
+            android:padding="10dp"/>
+
+        <Button
+            android:id="@+id/place_bid"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="50dp"
+            android:background="@drawable/button_background_style"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:text="Place Bid"
+            android:textColor="#fff"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:text="By placing a bid, you are committing to buy this item if you win"
+        android:textSize="16sp"
+        android:textColor="#000"
+        android:textStyle="bold"/>
+
+</LinearLayout>

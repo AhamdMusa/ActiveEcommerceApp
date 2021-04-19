@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TableRow>
+
+        <ImageButton
+            android:id="@+id/scanImage"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            android:background="@android:color/transparent"
+            android:src="@drawable/scan" />
+
+
+        <ImageButton
+            android:id="@+id/action_bar_search"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/scarch"
+            android:scaleType="fitStart"
+            android:background="@android:color/transparent"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/action_bar_cart"
+            android:layout_width="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_height="24dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/shopping_cart"
+            android:layout_gravity="center_vertical"
+            android:background="@android:color/transparent"
+          />
+    </TableRow>
+
+</TableLayout>
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/nav_view"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_nav_menu"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"/>
+
+</RelativeLayout>

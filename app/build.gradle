@@ -1,0 +1,95 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    defaultConfig {
+        applicationId "com.activeitzone.activeecommercecms"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 4
+        versionName "1.2"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.vectordrawable:vectordrawable:1.0.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    //Third Party Library
+    implementation 'com.quinny898.library.persistentsearch:library:1.1.0-SNAPSHOT'
+    implementation 'com.squareup.picasso:picasso:2.3.2'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.daimajia.slider:library:1.1.5@aar'
+
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
+    implementation 'com.squareup.okhttp3:okhttp:3.8.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+
+    implementation 'com.android.support:appcompat-v7:30.1.1'
+    implementation 'com.android.support:design:30.0.0'
+    implementation 'com.android.support:recyclerview-v7:30.1.1'
+    implementation 'com.kingfisherphuoc:easy-recyclerview-indicator:1.3'
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'jp.wasabeef:glide-transformations:4.0.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
+    //UpperCase
+    implementation 'org.apache.commons:commons-lang3:3.6'
+
+    //Braintree
+    implementation 'com.braintreepayments.api:drop-in:4.6.0'
+
+    //Badge
+    implementation 'q.rorbin:badgeview:1.1.3'
+
+    //Notifications
+    implementation 'org.aviran.cookiebar2:cookiebar2:1.1.3'
+
+    //Stripe
+    implementation 'com.stripe:stripe-android:12.8.2'
+
+    //Margin
+    implementation('com.github.thekhaeng:recycler-margin:1.2.1') {
+        exclude group: 'com.android.support', module: 'recyclerview-v7'
+    }
+
+    //Countdown
+    implementation 'com.github.iwgang:countdownview:2.1.6'
+
+    //Facebook
+    implementation 'com.facebook.android:facebook-login:[5,6)'
+
+    //Google
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+
+    //Carbon
+    api 'tk.zielony:carbon:0.16.0.1'
+}

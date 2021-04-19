@@ -1,0 +1,40 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="10dp"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        android:id="@+id/payment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/payment_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/paypal_logo_png_7" />
+
+        <TextView
+            android:id="@+id/payment_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@id/payment_icon"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Checkout with PayPal"
+            android:textColor="#000"
+            android:textSize="18sp"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

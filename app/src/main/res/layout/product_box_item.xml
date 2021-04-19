@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffff">
+
+
+        <ImageView
+            android:id="@+id/product_image"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:contentDescription="TODO"
+            app:layout_constraintEnd_toEndOf="@+id/product_rating"
+            app:layout_constraintStart_toStartOf="@+id/product_rating"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/demoshirt" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="20dp"
+            android:layout_height="19dp"
+            android:layout_marginTop="1dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/wholesale" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="30dp"
+            android:layout_height="17dp"
+            android:background="@drawable/discount_background"
+            android:text="-14%"
+            android:textAlignment="center"
+            android:textColor="#ffff"
+            android:textSize="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RatingBar
+            android:id="@+id/product_rating"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="81dp"
+            android:layout_height="17dp"
+            android:rating="2"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:layout_constraintBottom_toTopOf="@+id/product_name"
+            app:layout_constraintEnd_toEndOf="@+id/product_name"
+            app:layout_constraintStart_toStartOf="@+id/product_name"
+            app:layout_constraintTop_toBottomOf="@+id/product_name" />
+
+        <TextView
+            android:id="@+id/product_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginTop="4dp"
+            android:text="Black T shirt for man"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/product_image" />
+
+        <TextView
+            android:id="@+id/product_discounted_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="130$"
+            android:textAlignment="center"
+            android:textColor="#e74c3c"
+            android:textSize="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/product_price"
+            app:layout_constraintStart_toStartOf="@+id/product_name"
+            app:layout_constraintTop_toBottomOf="@+id/product_name" />
+
+        <TextView
+            android:id="@+id/product_price"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="150$"
+            android:background="@drawable/strike_through"
+            android:textColor="#95afc0"
+            android:textSize="8dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/product_discounted_price"
+            app:layout_constraintEnd_toEndOf="@+id/product_name"
+            app:layout_constraintHorizontal_bias="0.78"
+            app:layout_constraintStart_toStartOf="@+id/product_name" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

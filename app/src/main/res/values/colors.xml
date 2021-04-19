@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<!--    <color name="colorPrimary">#ce1745</color>-->
+<!--    <color name="colorPrimaryDark">#ce1745</color>-->
+
+    <color name="colorPrimary">#E62E04</color>
+    <color name="colorPrimaryDark">#CF2A04</color>
+
+    <color name="colorPrimaryLight">#fc8a1a</color>
+    <color name="colorAccent">#111111</color>
+
+    <color name="colorSuccess">#28a745</color>
+    <color name="colorWarning">#ffc107</color>
+    <color name="colorDanger">#dc3545</color>
+    <color name="colorInfo">#17a2b8</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
