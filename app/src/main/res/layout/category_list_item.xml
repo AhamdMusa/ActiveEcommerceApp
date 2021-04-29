@@ -2,41 +2,42 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center_horizontal"
+    android:layout_width="60dp"
+    android:layout_height="80dp"
+    android:backgroundTint="#e74c3c"
+    android:foreground="?android:attr/selectableItemBackground">
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@android:color/white"
-    android:paddingLeft="10dp"
-    android:paddingTop="@dimen/activity_horizontal_margin"
-    android:paddingRight="10dp"
-    android:paddingBottom="@dimen/activity_horizontal_margin"
-    android:foreground="?android:attr/selectableItemBackground">
-
+    android:orientation="vertical"
+    android:layout_alignParentBottom="true"
+    android:paddingBottom="8dp"
+    android:gravity="center">
     <ImageView
         android:id="@+id/category_icon"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
         app:srcCompat="@drawable/ic_account_circle_black_24dp"
         android:alpha="0.5"
         tools:ignore="VectorDrawableCompat" />
 
-    <ImageView
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:layout_alignParentRight="true"
-        android:layout_centerInParent="true"
-        app:srcCompat="@drawable/arrow" />
 
     <TextView
         android:id="@+id/category_name"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/category_icon"
-        android:ellipsize="end"
+        android:textSize="8dp"
         android:gravity="center"
-        android:maxLines="1"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+</LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/color_change_on_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#ecf0f1"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

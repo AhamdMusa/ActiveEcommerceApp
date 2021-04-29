@@ -23,6 +23,7 @@ import com.activeitzone.activeecommercecms.Models.Category;
 import com.activeitzone.activeecommercecms.Models.FlashDeal;
 import com.activeitzone.activeecommercecms.Models.Product;
 import com.activeitzone.activeecommercecms.Models.SliderImage;
+import com.activeitzone.activeecommercecms.Models.SubCategory;
 import com.activeitzone.activeecommercecms.Network.response.AppSettingsResponse;
 import com.activeitzone.activeecommercecms.Network.response.AuctionBidResponse;
 import com.activeitzone.activeecommercecms.Network.response.AuthResponse;
@@ -30,6 +31,7 @@ import com.activeitzone.activeecommercecms.Presentation.presenters.HomePresenter
 import com.activeitzone.activeecommercecms.Presentation.ui.activities.impl.LoginActivity;
 import com.activeitzone.activeecommercecms.Presentation.ui.activities.impl.ProductDetailsActivity;
 import com.activeitzone.activeecommercecms.Presentation.ui.activities.impl.ProductListingActivity;
+import com.activeitzone.activeecommercecms.Presentation.ui.activities.impl.SubCategoryActivity;
 import com.activeitzone.activeecommercecms.Presentation.ui.adapters.AuctionProductAdapter;
 import com.activeitzone.activeecommercecms.Presentation.ui.adapters.BestSellingAdapter;
 import com.activeitzone.activeecommercecms.Presentation.ui.adapters.BrandAdapter;
@@ -142,8 +144,8 @@ public class HomeFragment extends Fragment implements HomeView, CategoryClickLis
         LLr1c1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CategoriesFragment categoriesFragment = new CategoriesFragment();
-                loadFragment(categoriesFragment);
+                Intent intent = new Intent(getContext(), SubCategoryActivity.class);
+                startActivity(intent);
             }
         });
         LLr2c1.setOnClickListener(new View.OnClickListener() {
@@ -338,7 +340,7 @@ public class HomeFragment extends Fragment implements HomeView, CategoryClickLis
                 = new GridLayoutManager(getActivity(), 2, GridLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(horizontalLayoutManager);
         FeaturedProductAdapter adapter = new FeaturedProductAdapter(getActivity(), products, this);
-        recyclerView.addItemDecoration( new LayoutMarginDecoration( 2,  AppConfig.convertDpToPx(getContext(), 10)) );
+        recyclerView.addItemDecoration( new LayoutMarginDecoration( 2,  AppConfig.convertDpToPx(getContext(), 4)) );
         recyclerView.setAdapter(adapter);
     }
 

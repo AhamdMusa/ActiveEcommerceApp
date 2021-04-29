@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="?android:colorBackground">
-
+    android:orientation="vertical">
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scaleType="centerCrop"
+    android:src="@drawable/profilebackground"/>
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,42 +20,35 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardElevation="0dp"
-                app:cardCornerRadius="0dp">
 
-                <RelativeLayout
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/account_card_background">
+                    android:layout_height="150dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
 
                     <ImageView
                         android:id="@+id/account_image"
                         style="@drawable/rounder_image_shape"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="30dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="20dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/icons8_male_user_100"/>
 
                     <TextView
                         android:id="@+id/account_name"
                         android:layout_width="wrap_content"
+                        android:layout_marginStart="20dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/account_image"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="40dp"
                         android:text="SIGN IN / REGISTER"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textColor="#fff" />
 
-                </RelativeLayout>
+                </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -61,45 +58,166 @@
                 android:orientation="vertical"
                 android:divider="@android:color/black">
 
-                <RelativeLayout
-                    android:id="@+id/wishlist"
+                <androidx.cardview.widget.CardView
                     android:foreground="?android:attr/selectableItemBackground"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="140dp"
                     android:layout_marginBottom="5dp"
-                    android:background="@android:color/white"
-                    android:paddingLeft="10dp"
+                    app:cardCornerRadius="15dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
                     android:paddingTop="@dimen/activity_horizontal_margin"
                     android:paddingRight="10dp"
-                    android:paddingBottom="@dimen/activity_horizontal_margin">
+                    android:paddingBottom="@dimen/activity_horizontal_margin"
+                    android:elevation="16dp">
 
-                    <ImageView
-                        android:id="@+id/wishlist_icon"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/ic_wishlist" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerInParent="true"
-                        app:srcCompat="@drawable/arrow" />
+                        <RelativeLayout
+                            android:id="@+id/wallet_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:layout_marginLeft="10dp"
-                        android:layout_toRightOf="@id/wishlist_icon"
-                        android:ellipsize="end"
-                        android:gravity="center"
-                        android:maxLines="1"
-                        android:text="Wishlist"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                            <TextView
+                                android:layout_marginStart="20dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="My Wallet"/>
+                            <TextView
+                                android:textColor="#000"
+                                android:id="@+id/walletbalance"
+                                android:layout_marginStart="20dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="50.345"
+                                android:textStyle="bold"
+                                android:layout_marginEnd="20dp"
+                                android:layout_alignParentEnd="true"/>
+                        </RelativeLayout>
 
-                </RelativeLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginTop="35dp"
+                            android:background="@color/blue"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:layout_marginTop="35dp"
+                            android:gravity="center_vertical"
+                            android:weightSum="4">
+                            <LinearLayout
+                                android:id="@+id/topay"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/creditcard"
+                                    android:scaleType="fitCenter"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="To Pay"
+                                    android:textSize="8dp"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/toship"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/packaging"
+                                    android:scaleType="fitCenter"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="To Ship"
+                                    android:textSize="8dp"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/toreceive"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/pickuptruck"
+                                    android:scaleType="fitCenter"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="To Receive"
+                                    android:textSize="8dp"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/toreview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/feedback"
+                                    android:scaleType="fitCenter"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="To Review"
+                                    android:textSize="8dp"/>
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:padding="@dimen/marginBottom_10">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:paddingEnd="5dp">
                 <RelativeLayout
                     android:id="@+id/purchase_history"
                     android:foreground="?android:attr/selectableItemBackground"
@@ -107,7 +225,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
-                    android:background="@android:color/white"
                     android:paddingLeft="10dp"
                     android:paddingTop="@dimen/activity_horizontal_margin"
                     android:paddingRight="10dp"
@@ -117,14 +234,9 @@
                         android:id="@+id/purchase_history_icon"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
+                        android:layout_marginStart="30dp"
                         android:src="@drawable/ic_purchase_history" />
 
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerInParent="true"
-                        app:srcCompat="@drawable/arrow" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -135,133 +247,195 @@
                         android:ellipsize="end"
                         android:gravity="center"
                         android:maxLines="1"
-                        android:text="Purchase History"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                        android:textSize="10dp"
+                        android:text="Purchase History"/>
 
                 </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/massage"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="@dimen/activity_horizontal_margin"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="@dimen/activity_horizontal_margin">
 
-                <RelativeLayout
-                    android:id="@+id/wallet_info"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:background="@android:color/white"
-                    android:paddingLeft="10dp"
-                    android:paddingTop="@dimen/activity_horizontal_margin"
-                    android:paddingRight="10dp"
-                    android:paddingBottom="@dimen/activity_horizontal_margin">
+                            <ImageView
+                                android:id="@+id/massage_icon"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_marginStart="30dp"
+                                android:src="@drawable/message" />
 
-                    <ImageView
-                        android:id="@+id/wallet_info_icon"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/ic_wallet" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_toRightOf="@id/massage_icon"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="Massage"
+                                android:textSize="10dp"/>
 
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerInParent="true"
-                        app:srcCompat="@drawable/arrow" />
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/wishlist"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="@dimen/activity_horizontal_margin"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="@dimen/activity_horizontal_margin">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                            <ImageView
+                                android:id="@+id/wishlist_icon"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_marginStart="30dp"
+                                android:src="@drawable/wishlist" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_toRightOf="@id/wishlist_icon"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="Wishlist"
+                                android:textSize="10dp"/>
+
+                        </RelativeLayout>
+                </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:paddingStart="5dp">
+
+                        <RelativeLayout
+                            android:id="@+id/account_info"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="@dimen/activity_horizontal_margin"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="@dimen/activity_horizontal_margin">
+
+                            <ImageView
+                                android:id="@+id/account_info_icon"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_marginStart="20dp"
+                                android:src="@drawable/ic_account_info" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_toRightOf="@id/account_info_icon"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="Account Information"
+                                android:textSize="10dp"/>
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                        android:id="@+id/help"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:layout_marginLeft="10dp"
-                        android:layout_toRightOf="@id/wallet_info_icon"
-                        android:ellipsize="end"
-                        android:gravity="center"
-                        android:maxLines="1"
-                        android:text="My Wallet"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="@dimen/activity_horizontal_margin"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="@dimen/activity_horizontal_margin">
 
-                </RelativeLayout>
+                        <ImageView
+                            android:id="@+id/help_icon"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginStart="20dp"
+                            android:src="@drawable/question" />
 
-                <RelativeLayout
-                    android:id="@+id/account_info"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:background="@android:color/white"
-                    android:paddingLeft="10dp"
-                    android:paddingTop="@dimen/activity_horizontal_margin"
-                    android:paddingRight="10dp"
-                    android:paddingBottom="@dimen/activity_horizontal_margin">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@id/help_icon"
+                            android:ellipsize="end"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:text="Help"
+                            android:textSize="10dp"/>
 
-                    <ImageView
-                        android:id="@+id/account_info_icon"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/ic_account_info" />
+                    </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
 
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerInParent="true"
-                        app:srcCompat="@drawable/arrow" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:layout_marginLeft="10dp"
-                        android:layout_toRightOf="@id/account_info_icon"
-                        android:ellipsize="end"
-                        android:gravity="center"
-                        android:maxLines="1"
-                        android:text="Account Information"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-                </RelativeLayout>
 
-                <RelativeLayout
-                    android:id="@+id/logout"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:background="@android:color/white"
-                    android:paddingLeft="10dp"
-                    android:paddingTop="@dimen/activity_horizontal_margin"
-                    android:paddingRight="10dp"
-                    android:paddingBottom="@dimen/activity_horizontal_margin">
 
-                    <ImageView
-                        android:id="@+id/logout_icon"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/ic_exit" />
-
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerInParent="true"
-                        app:srcCompat="@drawable/arrow" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:layout_marginLeft="10dp"
-                        android:layout_toRightOf="@id/logout_icon"
-                        android:ellipsize="end"
-                        android:gravity="center"
-                        android:maxLines="1"
-                        android:text="Logout"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-                </RelativeLayout>
 
             </LinearLayout>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/logout"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/white"
+        android:paddingLeft="10dp"
+        android:paddingTop="@dimen/activity_horizontal_margin"
+        android:paddingRight="10dp"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:id="@+id/logout_icon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_exit"
+            android:layout_marginBottom="10dp"/>
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            app:srcCompat="@drawable/arrow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/logout_icon"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="Logout"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    </RelativeLayout>
+</RelativeLayout>

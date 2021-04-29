@@ -5,19 +5,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#ffff">
+    android:background="#ffff"
+    android:elevation="8dp">
 
 
     <ImageView
         android:id="@+id/product_image"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="@+id/product_rating"
-        app:layout_constraintStart_toStartOf="@+id/product_rating"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:srcCompat="@drawable/demoshirt"
-        android:contentDescription="TODO" />
+        android:contentDescription="TODO"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/demoshirt" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -45,15 +45,13 @@
     <RatingBar
         android:id="@+id/product_rating"
         style="?android:attr/ratingBarStyleSmall"
-        android:layout_width="81dp"
-        android:layout_height="17dp"
+        android:layout_width="78dp"
+        android:layout_height="15dp"
         android:rating="2"
-        android:scaleX="0.5"
-        android:scaleY="0.5"
-        app:layout_constraintBottom_toTopOf="@+id/product_name"
-        app:layout_constraintEnd_toEndOf="@+id/product_name"
-        app:layout_constraintStart_toStartOf="@+id/product_name"
-        app:layout_constraintTop_toBottomOf="@+id/product_image" />
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_price" />
 
     <TextView
         android:id="@+id/product_name"
@@ -65,36 +63,36 @@
         android:text="Black T shirt for man"
         android:textAlignment="center"
         android:textColor="#000"
-        android:textSize="10dp"
+        android:textSize="13dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_rating" />
+        app:layout_constraintTop_toBottomOf="@+id/product_image" />
 
     <TextView
         android:id="@+id/product_discounted_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="130$"
+        android:layout_marginStart="3dp"
+        android:textStyle="bold"
         android:textAlignment="center"
         android:textColor="#e74c3c"
-        android:textSize="10dp"
-        app:layout_constraintEnd_toStartOf="@+id/product_price"
+        android:textSize="15dp"
         app:layout_constraintStart_toStartOf="@+id/product_name"
         app:layout_constraintTop_toBottomOf="@+id/product_name" />
 
     <TextView
         android:id="@+id/product_price"
-        android:textAlignment="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="150$"
+        android:layout_marginStart="5dp"
         android:background="@drawable/strike_through"
+        android:text="150$"
+        android:textAlignment="center"
         android:textColor="#95afc0"
         android:textSize="8dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/product_discounted_price"
-        app:layout_constraintEnd_toEndOf="@+id/product_name"
-        app:layout_constraintHorizontal_bias="0.78"
-        app:layout_constraintStart_toStartOf="@+id/product_name" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_discounted_price" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

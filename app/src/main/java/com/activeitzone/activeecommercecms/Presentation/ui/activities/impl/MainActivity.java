@@ -56,7 +56,8 @@ public class MainActivity extends AppCompatActivity implements AppSettingsIntera
                     break;
                 case R.id.navigation_categories:
 
-                    loadFragment(categoriesFragment);
+                    Intent intent = new Intent(MainActivity.this, SubCategoryActivity.class);
+                    startActivity(intent);
                     break;
                 case R.id.navigation_search:
 
